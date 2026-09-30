@@ -1,0 +1,784 @@
+/* GATE RAKSHA — Premium Light Theme Design System */
+
+:root {
+    --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+
+    /* Light Theme Palette */
+    --bg-main: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --bg-subtle: #F1F5F9;
+    --border-color: #E2E8F0;
+    --border-hover: #CBD5E1;
+
+    /* Text Colors */
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+
+    /* Brand Colors */
+    --primary: #2563EB;
+    --primary-hover: #1D4ED8;
+    --primary-light: #EFF6FF;
+
+    /* Status Colors */
+    --status-open: #16A34A;
+    --status-open-bg: #F0FDF4;
+    --status-open-border: #BBF7D0;
+
+    --status-closing: #D97706;
+    --status-closing-bg: #FFFBEB;
+    --status-closing-border: #FDE68A;
+
+    --status-closed: #DC2626;
+    --status-closed-bg: #FEF2F2;
+    --status-closed-border: #FCA5A5;
+
+    --status-unavailable: #64748B;
+    --status-unavailable-bg: #F8FAFC;
+    --status-unavailable-border: #E2E8F0;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.light-theme {
+    font-family: var(--font-primary);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header */
+.app-header {
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 24px;
+    box-shadow: var(--shadow-sm);
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #2563EB, #1D4ED8);
+    color: #FFFFFF;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+.logo-text h1 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.route-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--primary);
+    background: var(--primary-light);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    display: inline-block;
+    margin-top: 2px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.honesty-badge-top {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg-subtle);
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.refresh-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.timer-ring {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #BFDBFE;
+}
+
+/* Main Layout */
+.main-layout {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 69px);
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar-panel {
+    width: 440px;
+    background: var(--bg-main);
+    border-right: 1px solid var(--border-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+}
+
+/* Cards */
+.card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    box-shadow: var(--shadow-sm);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.card-header h2 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Form Controls */
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.input-with-action {
+    display: flex;
+    gap: 8px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px 14px;
+    font-family: var(--font-primary);
+    font-size: 0.88rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+input[readonly] {
+    background: var(--bg-subtle);
+    color: var(--text-secondary);
+    cursor: default;
+}
+
+.form-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    display: block;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 16px;
+    font-family: var(--font-primary);
+    font-size: 0.88rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background: var(--bg-subtle);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: var(--border-color);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--border-color);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary-light);
+    border-color: var(--primary);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+}
+
+/* Badges */
+.badge {
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-primary {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+/* Route Summary Bar */
+.route-summary-bar {
+    display: flex;
+    justify-content: space-between;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 12px 18px;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.summary-value {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* Gates Section */
+.gates-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-title h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.live-pill {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--status-open);
+    background: var(--status-open-bg);
+    border: 1px solid var(--status-open-border);
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--status-open);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(22, 163, 74, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+}
+
+.gates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Gate Item Card */
+.gate-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.gate-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-hover);
+}
+
+.gate-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.gate-name-box h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.gate-subtext {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid transparent;
+}
+
+.status-badge.OPEN {
+    background: var(--status-open-bg);
+    color: var(--status-open);
+    border-color: var(--status-open-border);
+}
+
+.status-badge.CLOSING_SOON {
+    background: var(--status-closing-bg);
+    color: var(--status-closing);
+    border-color: var(--status-closing-border);
+}
+
+.status-badge.CLOSED {
+    background: var(--status-closed-bg);
+    color: var(--status-closed);
+    border-color: var(--status-closed-border);
+}
+
+.status-badge.UNAVAILABLE {
+    background: var(--status-unavailable-bg);
+    color: var(--status-unavailable);
+    border-color: var(--status-unavailable-border);
+}
+
+.gate-card-body {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+    background: var(--bg-subtle);
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    margin-top: 8px;
+}
+
+.train-eta-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+.gate-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px dashed var(--border-color);
+    padding-top: 8px;
+}
+
+/* Honesty Card */
+.honesty-card {
+    display: flex;
+    gap: 14px;
+    background: #EFF6FF;
+    border-color: #BFDBFE;
+}
+
+.honesty-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.honesty-content h4 {
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.honesty-content p {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.35;
+}
+
+/* Map Section */
+.map-section {
+    flex: 1;
+    position: relative;
+    background: #E2E8F0;
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.map-container {
+    width: 100%;
+    height: 100%;
+}
+
+.map-overlay-controls {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+}
+
+.legend-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    box-shadow: var(--shadow-md);
+}
+
+.legend-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.legend-item {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.color-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.bg-green { background-color: var(--status-open); }
+.bg-amber { background-color: var(--status-closing); }
+.bg-red { background-color: var(--status-closed); }
+.bg-gray { background-color: var(--status-unavailable); }
+
+.text-blue { color: var(--primary); }
+.text-green { color: var(--status-open); }
+.text-red { color: var(--status-closed); }
+
+/* Loading Skeleton */
+.loading-skeleton {
+    text-align: center;
+    padding: 28px 16px;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-weight: 500;
+    background: var(--bg-surface);
+    border: 1px dashed var(--border-color);
+    border-radius: var(--radius-md);
+}
+
+.loading-skeleton i {
+    margin-right: 8px;
+    color: var(--primary);
+}
+
+/* Initial Placeholder */
+.initial-placeholder {
+    border: 1px dashed var(--border-color);
+    background: var(--bg-surface);
+}
+
+/* Live Pill States */
+.live-pill-waiting {
+    color: var(--text-muted) !important;
+    background: var(--bg-subtle) !important;
+    border-color: var(--border-color) !important;
+}
+
+.live-pill-offline {
+    color: var(--status-closed) !important;
+    background: var(--status-closed-bg) !important;
+    border-color: var(--status-closed-border) !important;
+}
+
+.pulse-dot-gray {
+    width: 8px;
+    height: 8px;
+    background-color: var(--text-muted);
+    border-radius: 50%;
+}
+
+/* Honesty Badge Unavailable */
+.badge-unavailable {
+    color: var(--status-closed) !important;
+    background: var(--status-closed-bg) !important;
+    border-color: var(--status-closed-border) !important;
+}
+
+/* Gate Card Status Left Border Accents */
+.gate-card-OPEN {
+    border-left: 4px solid var(--status-open);
+}
+
+.gate-card-CLOSING_SOON {
+    border-left: 4px solid var(--status-closing);
+}
+
+.gate-card-CLOSED {
+    border-left: 4px solid var(--status-closed);
+}
+
+.gate-card-UNAVAILABLE {
+    border-left: 4px solid var(--status-unavailable);
+}
+
+/* Train Detail Row */
+.train-detail-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 6px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.train-detail-row span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.gate-detail-text {
+    margin-bottom: 4px;
+}
+
+/* Disabled Button */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Map Pin Styles */
+.marker-pin {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #fff;
+    box-shadow: var(--shadow-md);
+}
+
+.origin-pin {
+    background: var(--primary);
+}
+
+.dest-pin {
+    background: var(--status-closed);
+}
+
+.gate-map-pin {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gate-map-pin .pin-inner {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.75rem;
+    z-index: 2;
+    box-shadow: var(--shadow-md);
+}
+
+.gate-map-pin .pin-pulse {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    opacity: 0.25;
+    animation: pulse 2s infinite;
+    z-index: 1;
+}
+
+/* Map Popup Styles */
+.map-popup-card {
+    padding: 4px;
+    min-width: 180px;
+}
+
+.popup-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.popup-status {
+    font-weight: 700;
+    font-size: 0.82rem;
+    margin: 4px 0;
+}
+
+.popup-details {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+}
+
+.popup-disclaimer {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+    font-style: italic;
+}
+

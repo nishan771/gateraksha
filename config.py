@@ -1,0 +1,4 @@
+import os
+
+GOOGLE_MAPS_API_KEY = os.environ.get("GOOGLE_MAPS_API_KEY", "AIzaSyBEC3UpJ6ydr7sFmDZgBgDGKp5lzCy4pfc")
+RAILRADAR_API_KEY = os.environ.get("RAILRADAR_API_KEY", "rg_7025fa29e38d4604b8841fd52e72cf81")
